@@ -6,9 +6,9 @@ import com.fasterxml.jackson.databind.*;
 import java.io.IOException;
 
 public class Json {
-    private static ObjectMapper myObjectMapper;
+    private static ObjectMapper myObjectMapper = defaultObjectMapper();
 
-    public static ObjectMapper defaultObjectMapper() {
+    private static ObjectMapper defaultObjectMapper() {
         ObjectMapper om = new ObjectMapper();
         om.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         return om;
