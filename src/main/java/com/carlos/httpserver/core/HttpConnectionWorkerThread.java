@@ -21,6 +21,11 @@ public class HttpConnectionWorkerThread extends Thread{
         try {
             inputStream = socket.getInputStream();
             outputStream = socket.getOutputStream();
+
+            int _byte ;
+            while((_byte = inputStream.read()) >= 0) {
+                System.out.println((char)_byte);
+            }
             // read
             String html = "<html><head><title>Java HTTP Server</title></head><body><h1>Hello World!</h1></body></html>";
             final String CRLF = "\n\r";
